@@ -10,9 +10,9 @@ local Window = Rayfield:CreateWindow({
    DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
 
    ConfigurationSaving = {
-      Enabled = false,
-      FolderName = nil, -- Create a custom folder for your hub/game
-      FileName = "Big Hub"
+      Enabled = true,
+      FolderName = gbs/key, -- Create a custom folder for your hub/game
+      FileName = "GBS"
    },
 
    Discord = {
@@ -35,6 +35,9 @@ local Window = Rayfield:CreateWindow({
 
 local MainTab = Window:CreateTab("개병신허브 ㄷㄷㄷㅈ", nill) -- Title, Image
 local MainSection = MainTab:CreateSection("Section Example")
+
+local MainTab2 = Window:CreateTab("GBS Premium", nill) -- Title, Image
+local MainSection = MainTab2:CreateSection("Section Example")
 
 Rayfield:Notify({
    Title = "스크립트 키는중",
@@ -71,5 +74,16 @@ local Button = MainTab:CreateButton({
    Name = "Blox Fruits",
    Callback = function()
        loadstring(game.HttpGet(game,'https://raw.githubusercontent.com/Yumiara/Python/refs/heads/main/BloxFruit-XYZ.lua'))()
+   end,
+})
+
+local Button = MainTab2:CreateButton({
+   Name = "sex",
+   Callback = function()
+      getgenv().Key = "ARCHUB-J8KC-ZSCE-CKSZ-M5UB8GK"
+      getgenv().RaidUI = false -- For Hidden Raid Mode true = show and false = hidden
+      getgenv().CustomDistance = 10 -- For Bug Can't Swipe Distance
+      getgenv().ResetFirstLoad = true -- For Reset First Time Load true = yes and false = no
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/ChopLoris/ArcHub/main/main.lua"))()
    end,
 })
