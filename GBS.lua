@@ -36,9 +36,6 @@ local Window = Rayfield:CreateWindow({
 local MainTab = Window:CreateTab("개병신허브 ㄷㄷㄷㅈ", nill) -- Title, Image
 local MainSection = MainTab:CreateSection("Section Example")
 
-local MainTab2 = Window:CreateTab("GBS Premium", nill) -- Title, Image
-local MainSection = MainTab2:CreateSection("Section Example")
-
 Rayfield:Notify({
    Title = "스크립트 키는중",
    Content = "빌런이 개보지새끼",
@@ -77,7 +74,7 @@ local Button = MainTab:CreateButton({
    end,
 })
 
-local Button = MainTab2:CreateButton({
+local Button = MainTab:CreateButton({
    Name = "sex",
    Callback = function()
       getgenv().Key = "ARCHUB-J8KC-ZSCE-CKSZ-M5UB8GK"
