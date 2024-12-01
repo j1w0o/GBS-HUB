@@ -75,7 +75,7 @@ local Button = MainTab:CreateButton({
 })
 
 local Button = MainTab:CreateButton({
-   Name = "fling",
+   Name = "Arc Prem",
    Callback = function()
       getgenv().Key = "ARCHUB-J8KC-ZSCE-CKSZ-M5UB8GK"
       getgenv().RaidUI = false -- For Hidden Raid Mode true = show and false = hidden
@@ -86,7 +86,7 @@ local Button = MainTab:CreateButton({
 })
 
 local Button = MainTab:CreateButton({
-   Name = "sex",
+   Name = "fling",
    Callback = function()
       loadstring(game:HttpGet("https://pastebin.com/raw/e0pP7UEb"))()
    end,
