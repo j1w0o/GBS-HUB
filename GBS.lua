@@ -84,3 +84,17 @@ local Button = MainTab:CreateButton({
       loadstring(game:HttpGet("https://raw.githubusercontent.com/ChopLoris/ArcHub/main/main.lua"))()
    end,
 })
+
+local Button = MainTab:CreateButton({
+   Name = "sex",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/e0pP7UEb"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "sex",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/LgZwZ7ZB"))()
+   end,
+})
