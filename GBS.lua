@@ -98,3 +98,12 @@ local Button = MainTab:CreateButton({
       loadstring(game:HttpGet("https://pastebin.com/raw/LgZwZ7ZB"))()
    end,
 })
+
+local Tab = Window:CreateTab("Fisch", 4483362458) -- Title, Image
+
+local Button = Tab:CreateButton({
+   Name = "Fisch (💎Premium💎)",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/j1w0o/GBS-HUB/refs/heads/main/GBS%20Fisch"))()
+   end,
+})
