@@ -3769,25 +3769,6 @@ MiscPlayer = Tap.Player:AddSection('Misc Player') do
 			PlayerGui.hud.safezone.backpack.inventory.Sell.sellall.Disabled = false
 		end
 	end)
-	Toggle(MiscPlayer, "Infinite Oxygen", "", "Infinite Oxygen", function(Value)
-		LocalPlayer.Character.client.oxygen.Disabled = Value
-	end)
-	Toggle(MiscPlayer, "Weather Clear", "", "Weather Clear", function(Value)
-		local OldWEA = ReplicatedStorage.world.weather.Value
-		if Value then
-			ReplicatedStorage.world.weather.Value = 'Clear' 
-		else
-			ReplicatedStorage.world.weather.Value = OldWEA
-		end
-	end)
-	Toggle(MiscPlayer, "Noclip", "", "Toggle Noclip")
-	Toggle(MiscPlayer, "Walk On Water", "", "Toggle Walk On Water", function(Value)
-		for i,v in pairs(workspace.zones.fishing:GetChildren()) do
-			if v.Name == "Ocean" then
-				v.CanCollide = Value
-			end
-		end
-	end)
 	Toggle(MiscPlayer, "Remove Fog", "", "Remove Fog", function(Value)
 		if Value then
 			if game:GetService("Lighting"):FindFirstChild("Sky") then
@@ -3829,21 +3810,6 @@ MiscPlayer = Tap.Player:AddSection('Misc Player') do
 		Callback = function()
 			TeleportService:TeleportToPlaceInstance(game.placeId, game.jobId, game.Players.LocalPlayer);
 		end,
-	})
-	MiscPlayer:AddButton({
-		Title = "Hop Server",
-		Description = "",
-		Callback = function()
-			AllFuncs.HopServer(true)
-		end
-	})
-	MiscPlayer:AddButton({
-		Title = "Hop Server Low",
-		Description = "",
-		Callback = function()
-			AllFuncs.HopServer(false)
-		end
-	})
 	MiscPlayer:AddButton({
         Title = "Anti Lag ( Once )",
         Description = "",
