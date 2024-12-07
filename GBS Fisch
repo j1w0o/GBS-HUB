@@ -7,7 +7,7 @@ local Window = Fluent:CreateWindow({
 	TabWidth = 160,
 	Size = UDim2.fromOffset(550, 350),
 	Acrylic = false, 
-	Theme = "Amethyst",
+	Theme = "Dark",
 	MinimizeKey = Enum.KeyCode.LeftControl
 })
  
@@ -4201,7 +4201,7 @@ do
 	InterfaceManager:BuildInterfaceSection(Tap.Settings)
 	Window:SelectTab(1)
 	SaveManager:LoadAutoloadConfig()
-	Fluent:SetTheme("Amethyst")
+	Fluent:SetTheme("Dark")
 	setfflag("TaskSchedulerTargetFps", "1000")
 setfpscap(120)
 while true do
