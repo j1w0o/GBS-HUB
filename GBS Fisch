@@ -3448,18 +3448,24 @@ workspace.active.ChildAdded:Connect(function(child)
 		end
 	end
 end)
+
+Main = Tap.General:AddSection('상태') do
+    SelectPosition = Main:AddParagraph({        
+        Title = "구독상태: 💎👑Premium👑💎"
+    })
+end
  
 Main = Tap.General:AddSection('일반') do
     SelectPosition = Main:AddParagraph({        
-        Title = "Position : N/A"
+        Title = "선택된 위치: N/A"
     })
-    Toggle(Main, "Auto Farm Fish", "", "Farm Fish")
-    Toggle(Main, "Teleport To Select Position", "", "To Pos Stand")
+    Toggle(Main, "자동 낚시", "", "Farm Fish")
+    Toggle(Main, "지정했던 위치로 텔레포트", "", "To Pos Stand")
     Main:AddButton({
-        Title = "Select Position",
+        Title = "위치 지정",
         Callback = function()
             Config['SelectPositionStand'] = LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame
-            SelectPosition:SetTitle("Position : " .. tostring(math.floor(LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position.X)) .. " X " .. tostring(math.floor(LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position.Y)) .. " Y " .. tostring(math.floor(LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position.Z)) .. " Z")
+            SelectPosition:SetTitle("선택된 위치 : " .. tostring(math.floor(LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position.X)) .. " X " .. tostring(math.floor(LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position.Y)) .. " Y " .. tostring(math.floor(LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position.Z)) .. " Z")
         end
     })
 end
@@ -3637,23 +3643,23 @@ Event = Tap.Event:AddSection('Event') do
 	})
 end
  
-Seller = Tap.General:AddSection('Seller') do
-	Toggle(Seller, "Auto Sell Fish","", "Sell Fish")
+Seller = Tap.General:AddSection('판매') do
+	Toggle(Seller, "물고기 자동으로 팔기","", "Sell Fish")
  
 	Seller:AddButton({
-		Title = "Sell All Fish",
+		Title = "가진 물고기 다 팔기",
 		Callback = function()
 			ReplicatedStorage:WaitForChild("events"):WaitForChild("selleverything"):InvokeServer()
 		end
 	})
 	Seller:AddButton({
-		Title = "Sell Fish ( In Hand )",
+		Title = "손에 있는 물고기 팔기",
 		Callback = function()
 			workspace.world.npcs:FindFirstChild("Marc Merchant").merchant.sell:InvokeServer()
 		end
 	})
 	Seller:AddButton({
-		Title = "Show Ui Buy Boat",
+		Title = "보트 사는 UI 열기",
 		Callback = function()
 			PlayerGui.hud.safezone.shipwright.Visible = not PlayerGui.hud.safezone.shipwright.Visible 
 		end
@@ -3665,21 +3671,21 @@ for i,v in pairs(FISHDATA) do
 	table.insert(FishList, i)
 end
  
-InfoFish = Tap.General:AddSection('Info Fish') do
+InfoFish = Tap.General:AddSection('물고기정보') do
 	InfoPrice = InfoFish:AddParagraph({        
-		Title = "Pice : N/A"
+		Title = "가격 : N/A"
 	})
 	InfoRarity = InfoFish:AddParagraph({        
-		Title = "Rarity : N/A"
+		Title = "희귀도 : N/A"
 	})
 	InfoChance = InfoFish:AddParagraph({        
-		Title = "Chance : N/A"
+		Title = "확률 : N/A"
 	})
 	InfoFavouriteBait = InfoFish:AddParagraph({        
-		Title = "FavouriteBait : N/A"
+		Title = "좋아하는 미끼 : N/A"
 	})
  
-	Dropdown(InfoFish, "Select Fish", "", FishList, false, "Select Fish Info")
+	Dropdown(InfoFish, "물고기선택", "", FishList, false, "Select Fish Info")
 	InfoFish:AddButton({
 		Title = "Get Info Fish In Hand",
 		Callback = function()
