@@ -88,6 +88,13 @@ local Button = FischTab:CreateButton({
    end,
 })
 
+local Button = FischTab:CreateButton({
+   Name = "Fisch spectrum",
+   Callback = function()
+      loadstring(game:HttpGet("https://you.whimper.xyz/spectrum"))()
+   end,
+})
+
 local FunTab = Window:CreateTab("Universal", 4483362458)
 local FunSection = FunTab:CreateSection("Fling, Fly, TP, etc.")
 
